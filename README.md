@@ -1,13 +1,38 @@
-# Sample Hardhat Project
+# Token creation on Hrdhat Network
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
+This is a simple Ethereum smart contract written in Solidity that allows the creation and management of custom tokens on a local HardHat network. 
+here in this contract you can mint tokens to a provided address, and any user can burn and mint tokens.
 
-Try running some of the following tasks:
+## Features
+### mint(address _address, uint256 _data)
+This function allows the contract owner to mint new tokens and assign them to the specified address. 
+The total supply and the balance of the target address will increase by the specified amount.
 
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node 
-npx hardhat run scripts/deploy.js
-```
+### burn(address _address, uint256 _data)
+Any user can burn their tokens by calling this function with their address and the amount of tokens they want to burn. 
+The total supply and the balance of the target address will decrease by the specified amount.
+
+### tokName
+This is a public variable representing the name of the token. 
+
+### Asymbol
+This is a public variable representing the symbol of the token. 
+
+### totalSupply
+This is a public variable representing the total supply of tokens in circulation.
+
+### amount
+This is a mapping that tracks the balance of each address. It allows users to check their token balance.
+
+##Steps to connect local hardhat network with remix
+
+Install all require dependencies using npm install command.
+
+### 1.Go to your projects terminal and compile the program using  npx hardhat node command.
+### 2.Open other terminal in same directory and run remixd command.
+### 3.Open remix on your web browser and connect to localhost workspace and then compile contract.
+### 4.And then interact with the Contract using Remix with Hardhat Provider
+
+
+
+
