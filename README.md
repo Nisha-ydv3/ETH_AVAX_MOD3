@@ -24,7 +24,7 @@ This is a public variable representing the total supply of tokens in circulation
 ### amount
 This is a mapping that tracks the balance of each address. It allows users to check their token balance.
 
-##Steps to connect local hardhat network with remix
+## Steps to connect local hardhat network with remix
 
 Install all require dependencies using npm install command.
 
