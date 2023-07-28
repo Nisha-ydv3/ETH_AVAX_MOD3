@@ -12,6 +12,8 @@ The total supply and the balance of the target address will increase by the spec
 Any user can burn their tokens by calling this function with their address and the amount of tokens they want to burn. 
 The total supply and the balance of the target address will decrease by the specified amount.
 
+### function Tokentransfer(address _reciever, uint256 _amount)
+Any user can transfer transfer of tokens from the sender's address to the receiver's address by calling this function.
 ### tokName
 This is a public variable representing the name of the token. 
 
