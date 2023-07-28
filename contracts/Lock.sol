@@ -33,6 +33,12 @@ contract Token{
         amount[_address] += _data;
 
     }
+    //transfer function
+    function Tokentransfer(address _reciever, uint256 _amount) public {
+        require(amount[msg.sender] >= _amount, "Balance is not sufficient");
+        amount[msg.sender] -= _amount;
+        amount[_reciever] += _amount;
+    }
 
 
     
