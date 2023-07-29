@@ -17,6 +17,12 @@ Any user can transfer transfer of tokens from the sender's address to the receiv
 ### tokName
 This is a public variable representing the name of the token. 
 
+### Constructor
+The constructor sets the owner of the contract to the address that deployed the contract.
+
+### Modifier onlyOwner
+This modifier is used to restrict access to certain functions only to the contract owner. Functions using this modifier will only be executed if the caller is the contract owner.
+
 ### Asymbol
 This is a public variable representing the symbol of the token. 
 
