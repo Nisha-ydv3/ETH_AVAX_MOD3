@@ -14,9 +14,25 @@ contract Token{
     string public tokName="Nisha";
     string public Asymbol="Yadav";
     uint256 public totalSupply=0;
+    
+
 
      // mapping variable here
     mapping (address=> uint256) public amount;
+    // Contract owner's address
+    address public owner; 
+
+    // Modifier to check if the caller is the owner
+    modifier onlyOwner() {
+        require(msg.sender == owner, "Only the contract owner can call this function");
+        _;
+    }
+
+    // Constructor to set the contract owner's address
+    constructor() {
+        owner = msg.sender;
+    }
+
     
     // burn function
     function Tokenburn( address _address,uint256 _data) public {
@@ -27,12 +43,12 @@ contract Token{
         
     }
  
-    // mint function
-    function Tokenmint(address _address, uint256 _data) public {
+     // mint function - can only be called by the owner
+    function Tokenmint(address _address, uint256 _data) public onlyOwner {
         totalSupply += _data;
         amount[_address] += _data;
-
     }
+
     //transfer function
     function Tokentransfer(address _reciever, uint256 _amount) public {
         require(amount[msg.sender] >= _amount, "Balance is not sufficient");
